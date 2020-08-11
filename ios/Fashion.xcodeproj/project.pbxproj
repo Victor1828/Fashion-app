@@ -18,6 +18,9 @@
 		6DE1035BF7DE317FE9E328C2 /* libPods-Fashion.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B32E30124374EF66F22F144 /* libPods-Fashion.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		C5A2E9E15985BB9A5A338FCD /* libPods-Fashion-FashionTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F36FD6641BD6D81442298FE /* libPods-Fashion-FashionTests.a */; };
+		16EF0CEFCDD64B5093AA33D2 /* SFProText-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8078D361EF99420F835F3167 /* SFProText-Bold.otf */; };
+		5883DBD58215415DB74FA39F /* SFProText-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B7E4ACF35AB3447E968F06E6 /* SFProText-Regular.otf */; };
+		33DBBBF725954C2A97972FC9 /* SFProText-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88B008C2B0D44090B849FA30 /* SFProText-Semibold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F3E913972B31574447799D3B /* Pods-Fashion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fashion.debug.xcconfig"; path = "Target Support Files/Pods-Fashion/Pods-Fashion.debug.xcconfig"; sourceTree = "<group>"; };
+		8078D361EF99420F835F3167 /* SFProText-Bold.otf */ = {isa = PBXFileReference; name = "SFProText-Bold.otf"; path = "../assets/fonts/SFProText-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B7E4ACF35AB3447E968F06E6 /* SFProText-Regular.otf */ = {isa = PBXFileReference; name = "SFProText-Regular.otf"; path = "../assets/fonts/SFProText-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		88B008C2B0D44090B849FA30 /* SFProText-Semibold.otf */ = {isa = PBXFileReference; name = "SFProText-Semibold.otf"; path = "../assets/fonts/SFProText-Semibold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +159,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				896751923113820FB4EA36BE /* Pods */,
+				96508A479D664E7D9890E71F /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -181,6 +188,17 @@
 			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		96508A479D664E7D9890E71F /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				8078D361EF99420F835F3167 /* SFProText-Bold.otf */,
+				B7E4ACF35AB3447E968F06E6 /* SFProText-Regular.otf */,
+				88B008C2B0D44090B849FA30 /* SFProText-Semibold.otf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -324,6 +342,9 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				16EF0CEFCDD64B5093AA33D2 /* SFProText-Bold.otf in Resources */,
+				5883DBD58215415DB74FA39F /* SFProText-Regular.otf in Resources */,
+				33DBBBF725954C2A97972FC9 /* SFProText-Semibold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

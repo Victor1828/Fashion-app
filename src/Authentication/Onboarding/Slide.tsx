@@ -1,5 +1,6 @@
 import React from 'react'
-import { View, Text, Dimensions, StyleSheet } from 'react-native'
+import { View, Dimensions, StyleSheet } from 'react-native'
+import { Text } from '../../components/theme'
 
 const { width, height } = Dimensions.get('window')
 
@@ -20,7 +21,7 @@ const Slide = ({ title, right }: SlideProps) => {
   return (
     <View style={styles.container}>
       <View style={[styles.titleContainer, { transform }]}>
-        <Text style={styles.title}>{title}</Text>
+        <Text variant="hero">{title}</Text>
       </View>
     </View>
   )
