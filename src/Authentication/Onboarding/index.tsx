@@ -5,11 +5,11 @@ import Slide, { SLIDER_HEIGHT } from './Slide'
 import Animated, { multiply, divide } from 'react-native-reanimated'
 import Subslide from './Subslide'
 import Dot from './Dot'
+import { StackNavigationProps, Routes } from '../../components/Navigation'
+import theme from '../../components/theme'
 
 const { width } = Dimensions.get('window')
 const { ScrollView, View: AnimatedView } = Animated
-
-const BORDER_RADIUS = 75
 
 const slides = [
   {
@@ -42,7 +42,9 @@ const slides = [
   },
 ]
 
-const Onboarding = () => {
+const Onboarding = ({
+  navigation,
+}: StackNavigationProps<Routes, 'Onboarding'>) => {
   const scroll = useRef<Animated.ScrollView>(null)
   const { scrollHandler, x } = useScrollHandler()
   const backgroundColor = interpolateColor(x, {
@@ -86,20 +88,24 @@ const Onboarding = () => {
               transform: [{ translateX: multiply(x, -1) }],
             }}
           >
-            {slides.map(({ subtitle, description }, index) => (
-              <Subslide
-                key={index}
-                {...{ subtitle, description }}
-                last={index === slides.length - 1}
-                onPress={() => {
-                  if (scroll.current) {
-                    scroll.current
-                      .getNode()
-                      .scrollTo({ x: width * (index + 1), animated: true })
-                  }
-                }}
-              />
-            ))}
+            {slides.map(({ subtitle, description }, index) => {
+              const last = index === slides.length - 1
+              return (
+                <Subslide
+                  key={index}
+                  {...{ subtitle, description, last }}
+                  onPress={() => {
+                    if (last) {
+                      navigation.navigate('Welcome')
+                    } else {
+                      scroll.current
+                        ?.getNode()
+                        .scrollTo({ x: width * (index + 1), animated: true })
+                    }
+                  }}
+                />
+              )
+            })}
           </AnimatedView>
         </View>
       </View>
@@ -114,7 +120,7 @@ const styles = StyleSheet.create({
   },
   slider: {
     height: SLIDER_HEIGHT,
-    borderBottomRightRadius: BORDER_RADIUS,
+    borderBottomRightRadius: theme.borderRadii.xl,
   },
   footer: {
     flex: 1,
@@ -122,12 +128,12 @@ const styles = StyleSheet.create({
   footerContent: {
     flex: 1,
     backgroundColor: 'white',
-    borderTopLeftRadius: BORDER_RADIUS,
+    borderTopLeftRadius: theme.borderRadii.xl,
   },
   pagination: {
     ...StyleSheet.absoluteFillObject,
     flexDirection: 'row',
-    height: BORDER_RADIUS,
+    height: theme.borderRadii.xl,
     justifyContent: 'center',
     alignItems: 'center',
   },

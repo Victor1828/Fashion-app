@@ -35,12 +35,6 @@ const styles = StyleSheet.create({
     height: 100,
     justifyContent: 'center',
   },
-  title: {
-    fontSize: 80,
-    lineHeight: 80,
-    color: 'white',
-    textAlign: 'center',
-  },
 })
 
 export default Slide
