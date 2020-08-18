@@ -1,6 +1,12 @@
 import React, { ReactNode } from 'react'
 import theme, { Box } from '../theme'
-import { Image, Dimensions, StyleSheet, StatusBar } from 'react-native'
+import {
+  Image,
+  Dimensions,
+  StyleSheet,
+  StatusBar,
+  SafeAreaView,
+} from 'react-native'
 
 const { width } = Dimensions.get('window')
 const aspectRatio = 750 / 1125
@@ -49,7 +55,9 @@ const Container = ({ children, footer }: ContainerProps) => {
         >
           {children}
         </Box>
-        <Box height={200}>{footer}</Box>
+        <SafeAreaView>
+          <Box padding="m">{footer}</Box>
+        </SafeAreaView>
       </Box>
     </Box>
   )

@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { StyleSheet } from 'react-native'
 import { RectButton } from 'react-native-gesture-handler'
 import theme, { Text } from '../theme'
 
 interface ButtonProps {
   variant: 'default' | 'primary' | 'transparent'
-  label: String
+  label?: String
   onPress: () => void
+  children?: ReactNode
 }
 
 const selectBackgroundColor = (variant: String) => {
@@ -20,7 +21,7 @@ const selectBackgroundColor = (variant: String) => {
   }
 }
 
-const Button = ({ variant, label, onPress }: ButtonProps) => {
+const Button = ({ variant, label, onPress, children }: ButtonProps) => {
   const backgroundColor = selectBackgroundColor(variant)
   const color = variant === 'primary' ? 'white' : '#0C0D34'
 
@@ -29,7 +30,11 @@ const Button = ({ variant, label, onPress }: ButtonProps) => {
       style={[styles.container, { backgroundColor }]}
       {...{ onPress }}
     >
-      <Text style={[styles.label, { color }]}>{label}</Text>
+      {children ? (
+        children
+      ) : (
+        <Text style={[styles.label, { color }]}>{label}</Text>
+      )}
     </RectButton>
   )
 }
